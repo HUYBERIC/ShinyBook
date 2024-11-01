@@ -1,3 +1,6 @@
+// D O M   C O N T E N T   L O A D E D
+document.addEventListener("DOMContentLoaded", function() {
+
 // V A R I A B L E S
 const searchButton = document.querySelector('#searchBtn');
 const pokeInput = document.querySelector('#pokeSearched');
@@ -101,4 +104,5 @@ pokeInput.addEventListener('keypress', (e) => {
 shinyBtn.addEventListener('click', () => {
     pokeSpriteRg.classList.toggle('hide');
     pokeSpriteSh.classList.toggle('hide');
+});
 });
