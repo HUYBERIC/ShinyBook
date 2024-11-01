@@ -34,6 +34,11 @@ async function loadPokemonList() {
 loadPokemonList();
 
 async function pokeById(){
+    searchResultText.classList.remove('hide');
+    pokeSpriteSh.classList.add('hide');
+    pokeSpriteRg.classList.remove('hide');
+    fullDisplay.style.display = 'grid';
+
     const searchQuery = pokeInput.value.toLowerCase();
     console.log('Searching for:', searchQuery);
     const foundPokemon = pokeList.find(poke => typeof poke.name.fr === 'string' && poke.name.fr.toLowerCase() === searchQuery);
@@ -90,10 +95,6 @@ async function displayPokemonInfo(pokeInfo){
 searchButton.addEventListener('click', pokeById);
 searchButton.addEventListener('click', ()=> {
     pokeById();
-    searchResultText.classList.remove('hide');
-    pokeSpriteSh.classList.add('hide');
-    pokeSpriteRg.classList.remove('hide');
-    fullDisplay.style.display = 'grid';
 });
 
 
