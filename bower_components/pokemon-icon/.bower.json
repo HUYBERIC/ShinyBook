@@ -1,0 +1,32 @@
+{
+  "name": "pokemon-icon",
+  "version": "1.0.1",
+  "homepage": "https://github.com/Lunik/pokemon-icon",
+  "authors": [
+    "Lunik <guillaume.lunik@gmail.com>"
+  ],
+  "description": "Add pokemon icon to your Html",
+  "main": "",
+  "keywords": [
+    "pokemon",
+    "icon"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "e22dcddbab4975c8a1d1101a4633e8d45950c422"
+  },
+  "_source": "https://github.com/Lunik/poke-icon.git",
+  "_target": "^1.0.1",
+  "_originalSource": "pokemon-icon",
+  "_direct": true
+}

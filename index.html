@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TyraDex</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="bower_components/dist/poke.icon.min.css" />
+  </head>
+  <body>
     <section class="tyradex">
-    <!-- T E X T  & I N P U T -->
+      <!-- T E X T  & I N P U T -->
 
-    <div class="headDiv">
+      <div class="headDiv">
         <h1>ShinyBook</h1>
-        <input type="text" id="pokeSearched" placeholder="Choisis un pokémon...">
-        <button id="searchBtn">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
+        <div class="searchAndBtn">
+            <input
+            type="text"
+            id="pokeSearched"
+            placeholder="Choisis un pokémon..."
+            />
+            <button id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+            <button id="randomBtn">
+              <img src="img/pokeball.png" alt="" />
+            </button>
+        </div>
+      </div>
 
-    <!-- R E S U L T   O F   S E A R C H -->
+      <!-- R E S U L T   O F   S E A R C H -->
 
-    <div class="searchResultText hide">En voilà un beau shiny : <span></span>.</div>
+      <div class="searchResultText hide">
+        Clique sur l'étoile pour voir le shiny de <span></span>.
+      </div>
 
-    <!-- A P I   R E S P O N S E -->
+      <!-- A P I   R E S P O N S E -->
 
-    <div class="response grid">
+      <div class="response grid">
         <div class="pokeNameFR"></div>
         <div class="sprites">
-            <div class="pokeSpriteRg"></div>
-            <div class="pokeSpriteSh hide"></div>
+          <div class="pokeSpriteRg"></div>
+          <div class="pokeSpriteSh hide"></div>
         </div>
         <div class="row3">
-            <div class="language">
-                <span class="pokeNameEN"></span>
-                <span class="pokeNameJP"></span>
-            </div>
-            <div class="pokeType"></div>
-            <div class="shinyBtn">
-                <i class="fas fa-star star"></i>
-            </div>
+          <div class="language">
+            <span class="pokeNameEN"></span>
+            <span class="pokeNameJP"></span>
+          </div>
+          <div class="pokeType"></div>
+          <div class="shinyBtn">
+            <i class="fas fa-star star"></i>
+          </div>
         </div>
-
-    </div>
-
+      </div>
     </section>
-<!-- S C R I P T -->
-<script src="app.js"></script>
-</body>
+    <!-- S C R I P T -->
+    <script src="app.js"></script>
+  </body>
 </html>

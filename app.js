@@ -22,6 +22,8 @@ const nextEvo = document.querySelector('.nextEvo');
 const firstNextEvo = document.querySelector('.firstNextEvo');
 const secondNextEvo = document.querySelector('.secondNextEvo');
 const fullDisplay = document.querySelector('.response.grid');
+let spriteSh, spriteRg;
+const randomBtn = document.querySelector('#randomBtn');
 
 // F E T C H  &  D E C L A R E
 let pokeList = [];
@@ -66,19 +68,23 @@ async function displayPokemonInfo(pokeInfo){
     // Nom fr
     pokeNameFR.innerText = pokeInfo.name.fr;
 
-    // Sprite (reg&shiny)
-    pokeSpriteRg.innerHTML = '';
-    const spriteRg = document.createElement('img');
+    // Sprite (reg&shiny) s'ils ne sont pas crées
+    if (!spriteRg && !spriteSh) {
+        spriteRg = document.createElement('img');
+        spriteSh = document.createElement('img');
+    }
+
+    // Mettre à jour les sources
     spriteRg.src = pokeInfo.sprites.regular;
+    spriteSh.src = pokeInfo.sprites.shiny;
+
+    // Afficher uniquement le sprite régulier au début
+    pokeSpriteRg.innerHTML = ''; 
     pokeSpriteRg.appendChild(spriteRg);
     
     pokeSpriteSh.innerHTML = '';
-    const spriteSh = document.createElement('img');
-    spriteSh.src = pokeInfo.sprites.shiny;
+    spriteSh.classList.add('hide');
     pokeSpriteSh.appendChild(spriteSh);
-
-    pokeSpriteRg.classList.remove('hide');
-    pokeSpriteSh.classList.add('hide');
 
     // Nom en et jp
     pokeNameEN.innerText = pokeInfo.name.en;
@@ -89,6 +95,19 @@ async function displayPokemonInfo(pokeInfo){
 
     // Nom de la recherche
     displaySearch.innerText = pokeInfo.name.fr;
+}
+
+function getRandomPokemon(){
+    if (pokeList.length === 0) {
+        console.error("La liste des pokémons n'est pas encore chargée");
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random()*pokeList.length);
+    const randomPokemon = pokeList[randomIndex];
+    pokeInput.value = randomPokemon.name.fr;
+
+    pokeById();
 }
 
 // A D D  E V E N T  L I S T E N E R
@@ -102,7 +121,11 @@ pokeInput.addEventListener('keypress', (e) => {
     if(e.key === 'Enter') pokeById();
 });
 
+randomBtn.addEventListener('click', getRandomPokemon);
+
 shinyBtn.addEventListener('click', () => {
+    spriteRg.classList.toggle('hide');
+    spriteSh.classList.toggle('hide');
     pokeSpriteRg.classList.toggle('hide');
     pokeSpriteSh.classList.toggle('hide');
 });
